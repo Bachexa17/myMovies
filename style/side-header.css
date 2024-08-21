@@ -1,0 +1,15 @@
+.side-header-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 10rem;
+
+  background-color: gray;
+}
+
+.side-header-top {
+  background-color: white;
+}
+
+.side-header-bottom {
+  background-color: white;
+}
