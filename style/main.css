@@ -1,0 +1,91 @@
+body {
+  font-family: oswald, arial;
+  margin: 0;
+  background-color: rgb(112, 90, 0);
+
+}
+
+header {
+  background-color: transparent;
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 4rem;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0.8rem;
+
+  margin: 5rem 5rem 5rem 5rem;
+}
+
+
+/* MOVIE CONTAINER */
+.movie {
+  box-shadow: 0 0 1px 2px rgba(0, 0, 0, 15%);
+  background-color: black;
+
+  height: 250px;
+  position: relative;
+}
+
+/* MOVIE HOVER EVENT */
+.movie:hover>.hover-img,
+.movie:hover>.movie-img {
+  opacity: 80%;
+}
+
+.hover-img,
+.movie-img {
+  transition: opacity 0.5s;
+}
+
+/* MOVIE IMAGES */
+.hover-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  z-index: 100;
+  opacity: 0;
+
+  height: 5rem;
+}
+
+.movie-img {
+  height: 100%;
+  width: 100%;
+
+  object-fit: cover;
+}
+
+/* MOVIE CONTAINER TEXT */
+.movie-info {
+  background-color: rgba(0, 0, 0, 50%);
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  height: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.movie-name {
+  color: red;
+  font-size: 1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 30%);
+
+  letter-spacing: 2px;
+  line-height: 0;
+}
