@@ -1,0 +1,60 @@
+.container-header {
+  background-color: rgb(90, 70, 0);
+  border-bottom: solid 3px rgba(0, 0, 0, 30%);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 3.6rem;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+}
+
+.list-open-button {
+  border: none;
+  border-radius: 100px;
+
+  background-color: black;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  width: 120px;
+  height: 35px;
+
+  padding-left: 8px;
+  margin-left: 10px;
+}
+
+.list-open-button-text {
+  color: white;
+  font-weight: 500;
+
+  letter-spacing: 1px;
+}
+
+.list-open-button-img {
+  height: 1.2rem;
+}
+
+/* list BUTTON ANIMATION */
+.list-open-button,
+.list-open-button-text {
+  transition: background-color 0.15s,
+    color 0.15s;
+}
+
+.list-open-button:hover {
+  background-color: white;
+}
+
+.list-open-button:hover>.list-open-button-text {
+  color: black;
+}

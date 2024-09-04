@@ -1,27 +1,59 @@
-import { movieData } from '../data/list.js';
+import { movieData } from '../data/data.js';
+import * as userMovie from './user-movie.js';
 
-renderHTML()
+funcHub()
+
+function funcHub() {
+  renderHTML();
+  addButtonEvent();
+  userListButton();
+};
 
 function renderHTML() {
   let HTML = ''
 
   movieData.forEach(movie => {
     HTML += `
-      <div class="movie js-movie" data-movie-id="${movie.id}">
-        <img class="hover-img" src="style/images/play.png">
+      <div class="movie" data-movie-id="${movie.id}">
+        <img class="play-img" src="style/images/play.png">
+        <button class="add-button" data-button-id=${movie.id}>ADD</button>
         <img class="movie-img" src="${movie.image}">
-        <div class="movie-info">
-          <span class="movie-name">${adjustNameLength(movie.name)}</span>
-        </div>        
       </div>
-    `;
+      `;
   });
-  document.querySelector('.main').innerHTML = HTML;
+  document.querySelector('.container-main').innerHTML = HTML;
 };
-function adjustNameLength(name) {
-  if (name.length > 20) {
-    return name.slice(0, 17).trim() + '..';
-  } else {
-    return name;
-  };
+
+function addButtonEvent() {
+  document.querySelectorAll('.add-button').forEach(button => {
+
+    const buttonId = button.dataset.buttonId;
+    button.addEventListener('click', () => {
+      userMovie.userMovieAppend(buttonId);
+
+    });
+
+  });
+
+};
+
+function userListButton() {
+  const listElementId = document.querySelector('.list-container');
+  const mainElement = document.querySelector('.container-main');
+
+  document.querySelector('.list-open-button').addEventListener('click', () => {
+    if (listElementId.style.display === 'grid') {
+      listElementId.style.display = 'none';
+
+      mainElement.style.filter = 'none';
+      mainElement.style.pointerEvents = 'auto';
+      return;
+    };
+    userMovie.renderUserList();
+
+    listElementId.style.display = 'grid';
+
+    mainElement.style.filter = 'blur(0.2px)';
+    mainElement.style.pointerEvents = 'none';
+  });
 };

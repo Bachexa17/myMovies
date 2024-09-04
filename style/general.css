@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  background-color: rgb(112, 90, 0);
+}
+
+body,
+span,
+button,
+div {
+  font-family: oswald, arial;
+}
+
+.container-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+  column-gap: 0.8rem;
+  row-gap: 2rem;
+
+  margin: 5rem 5rem 5rem 5rem;
+}
